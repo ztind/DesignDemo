@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!--我们在CollapsingToolbarLayout中放置了一个ImageView和一个Toolbar。
+    并把这个CollapsingToolbarLayout放到AppBarLayout中作为一个整体。 -->
+
+    <!--  app:layout_collapseMode="parallax" parallax滑动后隐藏 pin任显示-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:id="@+id/appbar"
+        >
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/collapsing_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true"
+        app:contentScrim="?attr/colorPrimary"
+        app:collapsedTitleGravity="center"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <ImageView
+            android:id="@+id/backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.7"
+           />
+        <!-- 注意Toolbar的高度要设置为"?attr/actionBarSize"，否则
+            CollapsingToolbarLayout用代码设置的文字显示不出来-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIcon="@mipmap/ic_back_u"
+            />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/my_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@+id/appbar"
+            android:layout_gravity="bottom|end"
+            android:src="@mipmap/yws"
+            android:layout_margin="10dp"
+            app:layout_collapseMode="parallax"
+            />
+     </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+            <!-- 注意在添加力联动属性app:layout_behavior="@string/appbar_scrolling_view_behavior"后
+              还要添加 android:nestedScrollingEnabled="true" 才能实现滑动列表时上面跟着滑动
+              ，否则只有滑动CollapsingToolbarLayout区域伸缩
+              GridView同理,不过这个属性sdk>21才会有效,产生效果：即android>=5.x
+              -->
+            <!-- app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            让listview显示在AppBarLayout下面-->
+    <ListView
+        android:id="@+id/listview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:nestedScrollingEnabled="true"
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>

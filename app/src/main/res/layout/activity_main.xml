@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.zt.designtest.ui.MainActivity">
+    <!-- 主界面布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#d0dfd0"
+            >
+            <ImageView
+               android:onClick="showorhintNavigationClick"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/order"
+                android:layout_marginLeft="4dp"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Android Design Support Library demo"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/design_table"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#3ff0e7"
+            />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <!--android.support.v4.widget.DrawerLayout大家都记得
+     DrawerLayout 这个控件吧！它是 android 用来体态 SlideMenu 的一个组件！ -->
+
+    <!-- 侧滑布局 design里的导航控件来显示-->
+
+    <!-- 我们直接看 NavigationView ，
+    会发现我使用了两个新的属性 app:headerLayout 和 app:menu
+    这是因为这个组件把menu分为两部分，一个是头部还有一个是 menu。
+    现在我们只需要写个新的头部和一个 menu就行啦
+
+     android:layout_gravity="start"左侧滑出 right为右侧滑出！-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/design_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+
+        app:headerLayout="@layout/slider_headerlayout"
+        app:menu="@menu/slider_menu"
+        />
+
+
+</android.support.v4.widget.DrawerLayout>

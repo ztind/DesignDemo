@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- colorPrimary为AppBarLayout/TabLayout的默认颜色-->
+    <color name="colorPrimary">#6dc9e3</color>
+    <!--colorPrimaryDark为手机状态栏的默认颜色  android 5.0系统后适用-->
+    <color name="colorPrimaryDark">#edd819</color>
+    <!-- 这里需要注意的是，TextInputLayout的颜色来自style中的colorAccent的颜色-->
+    <color name="colorAccent">#2beca5</color>
+
+    <color name="tabSelect">#f50e30</color>
+    <color name="tabnoSelect">#0a0a0a</color>
+    <color name="divi">#0a11e8</color>
+
+    <color name="swipe_color">#f00</color>
+
+</resources>

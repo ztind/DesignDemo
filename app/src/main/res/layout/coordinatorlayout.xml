@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <!-- 其中，一个可以滚动的组件，
+            例如RecyclerView、ListView
+        （这里需要注意的是，貌似只支持RecyclerView、ListView，如果你用一个ScrollView，
+        是没有效果的）。如果：
+        1、给这个可滚动组件设置了layout_behavior
+        2、给另一个控件设置了layout_scrollFlags
+        那么，当设置了layout_behavior的控件滑动时，
+        就会触发设置了layout_scrollFlags的控件发生状态的改变。-->
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="分类精选"
+                app:navigationIcon="@mipmap/back_close"
+                app:layout_scrollFlags="scroll|enterAlways"
+                />
+            <android.support.design.widget.TabLayout
+                android:id="@+id/design_table_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </android.support.design.widget.AppBarLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

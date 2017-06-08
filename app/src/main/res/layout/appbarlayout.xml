@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 这里就是把Toolbar和TabLayout放到了AppBarLayout中，让他们当做一个整体作为AppBar。-->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ed9250"
+            app:navigationIcon="@mipmap/back_close"
+            app:title="(AppBarLayout)Toobar+TabLayout"
+            app:titleMarginStart="10sp"
+            app:titleTextColor="#ffffff"
+            />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/design_table_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+</LinearLayout>
